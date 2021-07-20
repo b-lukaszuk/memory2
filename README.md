@@ -11,3 +11,11 @@ Roznice:
 Create memory game. Where human players (2-4) play with themselves.
 The goal is to try to find a pair of cards with the same symbol.
 symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "=", "+", "-", "~"];
+
+# Reminder
+
+Project created with command:
+
+```bash
+npx create-react-app my-app --template typescript
+```
