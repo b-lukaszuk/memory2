@@ -14,7 +14,7 @@ symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "=", "+", "-", "~"];
 
 # Reminder
 
-Project created with command:
+Utworzono za: https://create-react-app.dev/docs/adding-typescript/ komeda:
 
 ```bash
 npx create-react-app my-app --template typescript
