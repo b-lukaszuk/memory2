@@ -15,7 +15,7 @@ const App: React.FC = () => {
                 <Route exact path="/">
                     <LandingPage />
                 </Route>
-                <Route exact path="/gamePage">
+                <Route exact path="/gamePage/:noOfPlayers">
                     <GamePage />
                 </Route>
                 <Route path="*">{() => "404 NOT FOUND"}</Route>
