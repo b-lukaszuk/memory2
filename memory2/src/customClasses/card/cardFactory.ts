@@ -2,29 +2,28 @@ import Card from './card';
 import randInt from '../../utils/randInt';
 
 class CardFactory {
-    private _symbols: string[] = [
-        '!',
-        '@',
-        '#',
-        '$',
-        '%',
-        '^',
-        '&',
-        '*',
-        '=',
-        '+',
-        '-',
-        '~',
-    ];
-    // I changed _ to ~ because its easier to tell the difference with -
-
-    // used for testing
     // private _symbols: string[] = [
     //     '!',
     //     '@',
     //     '#',
     //     '$',
+    //     '%',
+    //     '^',
+    //     '&',
+    //     '*',
+    //     '=',
+    //     '+',
+    //     '-',
+    //     '~',
     // ];
+
+    // used for testing
+    private _symbols: string[] = [
+        '!',
+        '@',
+        '#',
+        '$',
+    ];
     private _cards: Card[] = [];
 
     public constructor() {
