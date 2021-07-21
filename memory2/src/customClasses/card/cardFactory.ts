@@ -1,5 +1,4 @@
 import Card from './card';
-import randInt from '../../utils/randInt';
 
 class CardFactory {
     // private _symbols: string[] = [
@@ -22,6 +21,9 @@ class CardFactory {
         '!',
         '@',
         '#',
+        '$',
+        '%',
+        '&',
     ];
     private _cards: Card[] = [];
 
