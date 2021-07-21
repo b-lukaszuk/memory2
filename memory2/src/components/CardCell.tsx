@@ -7,7 +7,7 @@ const CardCell: React.FC<{ card: Card }> = (card) => {
     console.log("received card to render");
 
     return (
-        <li>
+        <li className="card">
             {cardIn.getId()} - {cardIn.getSymbol()}
         </li>
     );

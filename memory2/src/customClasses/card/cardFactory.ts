@@ -22,7 +22,6 @@ class CardFactory {
         '!',
         '@',
         '#',
-        '$',
     ];
     private _cards: Card[] = [];
 
@@ -34,17 +33,13 @@ class CardFactory {
         }
     }
 
-    public getNumOfCards(): number {
-        return this._cards.length;
+    private shuffleCards(): void {
+        this._cards.sort(() => (Math.random() > 0.5) ? 1 : -1);
     }
 
-    /**
-     * returns a random card
-     * or unefined if the deck is empty
-     */
-    public getRandCard(): Card {
-        // Array.splice() returns an array and modifies the original array
-        return this._cards.splice(randInt(this._cards.length), 1)[0];
+    public getAllCards(): Card[] {
+        this.shuffleCards();
+        return this._cards;
     }
 }
 

@@ -5,33 +5,15 @@ import CardCell from "./CardCell";
 
 const GamePage: React.FC = () => {
     const cardFactory = singlCardFactory.getCardFactoryInstance();
+    const [cards, setCards] = useState(cardFactory.getAllCards());
 
-    const getAllCards = (): Card[] => {
-        let numOfCardsInDeck = cardFactory.getNumOfCards();
-        let theCards: Card[] = [];
-        for (let i = 0; i < numOfCardsInDeck; i++) {
-            theCards.push(cardFactory.getRandCard());
-        }
-        return theCards;
-    };
-
-    const [cards, setCards] = useState(getAllCards());
-
-    const test: number[] = [1, 2, 3];
-    const stuff = test.map((item) => <li key={item}>{item}</li>);
-    console.log(stuff);
-
-    console.log(cards);
-    console.log(cards.length);
-
-    console.log(cards.length);
     return (
         <div>
             <h1>GamePage.tsx</h1>
-            <p>tu powinna byc karta</p>
-            {(cards.length === 0) + ""}
-            <ul>{stuff}</ul>
-            {test.length}
+            <ul className="cards">
+                {cards.map((o) => <CardCell key={o.getId()} card={o} />)}
+            </ul>
+
         </div>
     );
 };
