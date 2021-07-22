@@ -18,7 +18,11 @@ const CardCell: React.FC<Props> = (props) => {
                 cardIn.isCovered() ? "covered" : "uncovered",
                 cardIn.isMatched() ? "matched" : "",
             ].join(" ")}
-            onClick={() => clickHandlerIn(cardIn.getId())}
+            onClick={() => {
+                if (!cardIn.isMatched()) {
+                    clickHandlerIn(cardIn.getId());
+                }
+            }}
         >
             {cardIn.isCovered() ? "" : cardIn.getSymbol()}
         </div>

@@ -27,6 +27,31 @@ const GamePage: React.FC = () => {
                 return c;
             })
         );
+        let uncovCards: Card[] = cards.filter((c) => {
+            if (!c.isCovered()) {
+                return c;
+            }
+        });
+        if (
+            uncovCards.length === 2 &&
+            uncovCards[0].getSymbol() === uncovCards[1].getSymbol()
+        ) {
+            toggleCardCover(uncovCards[0].getId());
+            setCardToMatched(uncovCards[0].getId());
+            toggleCardCover(uncovCards[1].getId());
+            setCardToMatched(uncovCards[1].getId());
+        }
+    };
+
+    const setCardToMatched = (id: number) => {
+        setCards(
+            cards.map((c) => {
+                if (c.getId() === id) {
+                    c.toggleMatched();
+                }
+                return c;
+            })
+        );
     };
 
     return (
