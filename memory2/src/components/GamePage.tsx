@@ -41,6 +41,15 @@ const GamePage: React.FC = () => {
             toggleCardCover(uncovCards[1].getId());
             setCardToMatched(uncovCards[1].getId());
         }
+        if (
+            uncovCards.length === 2 &&
+            uncovCards[0].getSymbol() !== uncovCards[1].getSymbol()
+        ) {
+            setTimeout(() => {
+                toggleCardCover(uncovCards[0].getId());
+                toggleCardCover(uncovCards[1].getId());
+            }, 2000);
+        }
     };
 
     const setCardToMatched = (id: number) => {
