@@ -73,10 +73,12 @@ const GamePage: React.FC = () => {
             uncovCards.length === 2 &&
             uncovCards[0].getSymbol() === uncovCards[1].getSymbol()
         ) {
-            toggleCardCover(uncovCards[0].getId());
             setCardToMatched(uncovCards[0].getId());
-            toggleCardCover(uncovCards[1].getId());
             setCardToMatched(uncovCards[1].getId());
+            setTimeout(() => {
+                toggleCardCover(uncovCards[0].getId());
+                toggleCardCover(uncovCards[1].getId());
+            }, 1000);
             addPtsToPlayerOnMove();
         }
         if (
