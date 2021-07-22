@@ -30,7 +30,7 @@ class Player {
         this._points += howMany;
     }
 
-    public getOnMove(): boolean {
+    public isOnMove(): boolean {
         return this._onMove;
     }
 

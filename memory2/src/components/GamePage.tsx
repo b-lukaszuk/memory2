@@ -16,7 +16,44 @@ const GamePage: React.FC = () => {
     const playerFactory = singlPlayerFactory.getPlayerFactoryInstance(
         noOfPlayers.noOfPlayers
     );
-    const players: Player[] = playerFactory.getAllPlayers();
+    const [players, setPlayers] = useState(playerFactory.getAllPlayers());
+
+    const addPtsToPlayerOnMove = () => {
+        setPlayers(
+            players.map((p) => {
+                if (p.isOnMove()) {
+                    p.addPoints();
+                }
+                return p;
+            })
+        );
+    };
+
+    const togglePlayerOnMove = (id: number) => {
+        setPlayers(
+            players.map((p) => {
+                if (p.getId() === id) {
+                    p.toggleOnMove();
+                }
+                return p;
+            })
+        );
+    };
+
+    const moveToNextPlayer = () => {
+        let playerOnMove: Player = players.filter((p) => {
+            if (p.isOnMove()) {
+                return p;
+            }
+        })[0];
+        let idOnMove: number = playerOnMove.getId();
+        togglePlayerOnMove(idOnMove);
+        if (idOnMove + 1 === players.length) {
+            togglePlayerOnMove(0);
+        } else {
+            togglePlayerOnMove(idOnMove + 1);
+        }
+    };
 
     const toggleCardCover = (id: number) => {
         setCards(
@@ -40,6 +77,7 @@ const GamePage: React.FC = () => {
             setCardToMatched(uncovCards[0].getId());
             toggleCardCover(uncovCards[1].getId());
             setCardToMatched(uncovCards[1].getId());
+            addPtsToPlayerOnMove();
         }
         if (
             uncovCards.length === 2 &&
@@ -48,6 +86,7 @@ const GamePage: React.FC = () => {
             setTimeout(() => {
                 toggleCardCover(uncovCards[0].getId());
                 toggleCardCover(uncovCards[1].getId());
+                moveToNextPlayer();
             }, 2000);
         }
     };
