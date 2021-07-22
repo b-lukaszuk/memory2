@@ -1,30 +1,21 @@
 import Card from './card';
 
 class CardFactory {
-    // private _symbols: string[] = [
-    //     '!',
-    //     '@',
-    //     '#',
-    //     '$',
-    //     '%',
-    //     '^',
-    //     '&',
-    //     '*',
-    //     '=',
-    //     '+',
-    //     '-',
-    //     '~',
-    // ];
-
-    // used for testing
     private _symbols: string[] = [
         '!',
         '@',
         '#',
         '$',
         '%',
+        '^',
         '&',
+        '*',
+        '=',
+        '+',
+        '-',
+        '~',
     ];
+
     private _cards: Card[] = [];
 
     public constructor() {

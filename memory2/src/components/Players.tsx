@@ -1,6 +1,5 @@
 import React from "react";
 import Player from "../customClasses/player/player";
-import singlPlayerFactory from "../customClasses/player/playerFactory";
 import "./Players.css";
 
 interface Props {
@@ -22,8 +21,7 @@ const Players: React.FC<Props> = (props) => {
     })
 
     return (
-        <div>
-            <p>No of players: {playersIn.length}</p>
+        <div className="players">
             <table>
                 <tbody>
                     {playerData}

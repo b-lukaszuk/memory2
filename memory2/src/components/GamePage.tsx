@@ -114,7 +114,7 @@ const GamePage: React.FC = () => {
 
     return (
         <div>
-            <h1>GamePage.tsx</h1>
+            <h1>Memory game</h1>
             <Players players={players} />
             <div className="container">
                 <div className="cards">

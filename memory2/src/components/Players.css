@@ -1,3 +1,7 @@
 .onMove {
     background: lightgray;
 }
+
+.players {
+    font-size: 1.3em;
+}
