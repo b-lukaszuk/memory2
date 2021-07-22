@@ -5,11 +5,18 @@ import CardCell from "./CardCell";
 import "./GamePage.css";
 import Players from "./Players";
 import { useParams } from "react-router-dom";
+import Player from "../customClasses/player/player";
+import singlPlayerFactory from "../customClasses/player/playerFactory";
 
 const GamePage: React.FC = () => {
     const cardFactory = singlCardFactory.getCardFactoryInstance();
     const [cards, setCards] = useState(cardFactory.getAllCards());
+
     let noOfPlayers: any = useParams();
+    const playerFactory = singlPlayerFactory.getPlayerFactoryInstance(
+        noOfPlayers.noOfPlayers
+    );
+    const players: Player[] = playerFactory.getAllPlayers();
 
     const toggleCardCover = (id: number) => {
         setCards(
@@ -25,7 +32,7 @@ const GamePage: React.FC = () => {
     return (
         <div>
             <h1>GamePage.tsx</h1>
-            <Players noOfPlayers={noOfPlayers.noOfPlayers} />
+            <Players players={players} />
             <div className="container">
                 <div className="cards">
                     {cards.map((o) => (
