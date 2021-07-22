@@ -2,29 +2,25 @@ import React, { useState } from "react";
 import Card from "../customClasses/card/card";
 import "./CardCell.css";
 
-const CardCell: React.FC<{ card: Card }> = (card) => {
-    const cardIn: Card = card.card;
-    const [covered, setCovered] = useState(cardIn.isCovered());
-    const [matched, setMatched] = useState(cardIn.getId() % 3 === 0);
+interface Props {
+    card: Card;
+    clickHandler: (id: number) => void;
+}
 
-    const handleClick = (event: React.MouseEvent): void => {
-        event.preventDefault();
-        if (!matched) {
-            cardIn.toggleCovered();
-            setCovered(cardIn.isCovered());
-        }
-    };
+const CardCell: React.FC<Props> = (props) => {
+    const clickHandlerIn = props.clickHandler;
+    const cardIn: Card = props.card;
 
     return (
         <div
             className={[
                 "card",
-                covered ? "covered" : "uncovered",
-                matched ? "matched" : "",
+                cardIn.isCovered() ? "covered" : "uncovered",
+                cardIn.isMatched() ? "matched" : "",
             ].join(" ")}
-            onClick={handleClick}
+            onClick={() => clickHandlerIn(cardIn.getId())}
         >
-            {covered ? "" : cardIn.getSymbol()}
+            {cardIn.isCovered() ? "" : cardIn.getSymbol()}
         </div>
     );
 };
