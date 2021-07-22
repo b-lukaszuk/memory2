@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+    // BrowserRouter as Router,
+    HashRouter as Router,
+    Route,
+    Switch
+} from "react-router-dom";
 
 import GamePage from "./components/GamePage";
 import LandingPage from "./components/LandingPage";
