@@ -18,6 +18,8 @@ const GamePage: React.FC = () => {
     );
     const [players, setPlayers] = useState(playerFactory.getAllPlayers());
 
+    const [canClickOnCard, setCanClickOnCard] = useState(true);
+
     const addPtsToPlayerOnMove = () => {
         setPlayers(
             players.map((p) => {
@@ -56,40 +58,46 @@ const GamePage: React.FC = () => {
     };
 
     const toggleCardCover = (id: number) => {
-        setCards(
-            cards.map((c) => {
-                if (c.getId() === id) {
-                    c.toggleCovered();
+        if (canClickOnCard) {
+            setCards(
+                cards.map((c) => {
+                    if (c.getId() === id) {
+                        c.toggleCovered();
+                    }
+                    return c;
+                })
+            );
+            let uncovCards: Card[] = cards.filter((c) => {
+                if (!c.isCovered()) {
+                    return c;
                 }
-                return c;
-            })
-        );
-        let uncovCards: Card[] = cards.filter((c) => {
-            if (!c.isCovered()) {
-                return c;
+            });
+            if (
+                uncovCards.length === 2 &&
+                uncovCards[0].getSymbol() === uncovCards[1].getSymbol()
+            ) {
+                setCardToMatched(uncovCards[0].getId());
+                setCardToMatched(uncovCards[1].getId());
+                setCanClickOnCard(false);
+                setTimeout(() => {
+                    toggleCardCover(uncovCards[0].getId());
+                    toggleCardCover(uncovCards[1].getId());
+                    setCanClickOnCard(true);
+                }, 1000);
+                addPtsToPlayerOnMove();
             }
-        });
-        if (
-            uncovCards.length === 2 &&
-            uncovCards[0].getSymbol() === uncovCards[1].getSymbol()
-        ) {
-            setCardToMatched(uncovCards[0].getId());
-            setCardToMatched(uncovCards[1].getId());
-            setTimeout(() => {
-                toggleCardCover(uncovCards[0].getId());
-                toggleCardCover(uncovCards[1].getId());
-            }, 1000);
-            addPtsToPlayerOnMove();
-        }
-        if (
-            uncovCards.length === 2 &&
-            uncovCards[0].getSymbol() !== uncovCards[1].getSymbol()
-        ) {
-            setTimeout(() => {
-                toggleCardCover(uncovCards[0].getId());
-                toggleCardCover(uncovCards[1].getId());
-                moveToNextPlayer();
-            }, 2000);
+            if (
+                uncovCards.length === 2 &&
+                uncovCards[0].getSymbol() !== uncovCards[1].getSymbol()
+            ) {
+                setCanClickOnCard(false);
+                setTimeout(() => {
+                    toggleCardCover(uncovCards[0].getId());
+                    toggleCardCover(uncovCards[1].getId());
+                    moveToNextPlayer();
+                    setCanClickOnCard(true);
+                }, 2000);
+            }
         }
     };
 
