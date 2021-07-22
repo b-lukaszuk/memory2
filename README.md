@@ -6,6 +6,8 @@ Roznice:
 - gracze ludzcy nie komputerowi
 - pisane w [React.js](https://reactjs.org/) a nie w [Angular](https://angular.io/)
 
+**Deployed version ->** [Here](https://b-lukaszuk.github.io/memory2/#/)
+
 # Task description
 
 Create memory game. Where human players (2-4) play with themselves.
