@@ -1,0 +1,41 @@
+div {
+  margin: 0.4em;
+}
+
+.gameDescription {
+  margin: 1em;
+  font-size: 1.2em;
+}
+
+input[type="submit"] {
+  background-color: #008cba; /* blue */
+  border: none;
+  border-radius: 0.4em;
+  color: white;
+  padding: 0.4em 0.8em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 1em;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: #3566e4; /* blue */
+}
+
+select {
+  width: 3em;
+  height: 2em;
+  background-color: #008cba;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+label {
+  font-size: 1.2em;
+}

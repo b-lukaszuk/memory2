@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import "./LandingPage.css";
 
 const LandingPage: React.FC = () => {
     let [noOfPlayers, setNoOfPlayers] = useState(2);
@@ -17,18 +18,20 @@ const LandingPage: React.FC = () => {
     return (
         <div>
             <h1>Game description</h1>
-            <p>
+            <p className="gameDescription">
                 You will see a set of cards with hidden symbols
                 <br />
                 Click on the card to see the symbol
                 <br />
-                Click on another card with a symbol the same that You previously
-                discovered
+                Click on another card with a symbol the same that You have just
+                uncovered
                 <br />
                 Once a pair of cards with the same symbol is revealed, the cards are
                 removed and the player gets the points (player gets next move in the
                 same round)
                 <br />
+                There is about 1-2 second(s) delay for a player to familiarize with the
+                uncovered cards <br />
                 The game ends when all the cards are paired <br />
                 The players take turns to reveal the cards
                 <br />
@@ -44,7 +47,6 @@ const LandingPage: React.FC = () => {
                 <br /> <br />
                 <input type="submit" value="Go To the Game" />
             </form>
-
         </div>
     );
 };
