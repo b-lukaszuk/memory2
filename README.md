@@ -1,5 +1,7 @@
 # Info
 
+**Deployed version ->** [Here](https://b-lukaszuk.github.io/memory2/#/)
+
 Kopia [memory1](https://github.com/b-lukaszuk/memory1).
 
 Roznice:
