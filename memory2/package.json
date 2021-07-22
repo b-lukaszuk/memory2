@@ -1,8 +1,8 @@
 {
+  "homepage": "https://b-lukaszuk.github.io/memory2/",
   "name": "memory2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://b-lukaszuk.github.io/memory2/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
