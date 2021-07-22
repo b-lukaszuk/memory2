@@ -1,12 +1,10 @@
-import React from 'react';
-import LandingPage from "./components/LandingPage";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 import GamePage from "./components/GamePage";
-import './App.css';
-import {
-    BrowserRouter as Router,
-    Route,
-    Switch,
-} from "react-router-dom";
+import LandingPage from "./components/LandingPage";
+
+import "./App.css";
 
 const App: React.FC = () => {
     return (
@@ -22,6 +20,6 @@ const App: React.FC = () => {
             </Switch>
         </Router>
     );
-}
+};
 
 export default App;

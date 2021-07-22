@@ -1,11 +1,12 @@
 import React from "react";
+
 import Player from "../customClasses/player/player";
+
 import "./Players.css";
 
 interface Props {
     players: Player[];
 }
-
 
 const Players: React.FC<Props> = (props) => {
 

@@ -1,5 +1,7 @@
 import React from "react";
+
 import Card from "../customClasses/card/card";
+
 import "./CardCell.css";
 
 interface Props {
