@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+
 import "./LandingPage.css";
 
 const LandingPage: React.FC = () => {
@@ -27,8 +28,8 @@ const LandingPage: React.FC = () => {
                 uncovered
                 <br />
                 Once a pair of cards with the same symbol is revealed, the cards are
-                removed and the player gets the points (player gets next move in the
-                same round)
+                removed and the player gets the points <br />
+                (the player gets next move in the same round)
                 <br />
                 There is about 1-2 second(s) delay for a player to familiarize with the
                 uncovered cards <br />
