@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/memory2/static/css/main.3df011a9.chunk.css",
-    "main.js": "/memory2/static/js/main.e7a9ea5b.chunk.js",
-    "main.js.map": "/memory2/static/js/main.e7a9ea5b.chunk.js.map",
+    "main.css": "/memory2/static/css/main.0f91eefd.chunk.css",
+    "main.js": "/memory2/static/js/main.5dc9a44b.chunk.js",
+    "main.js.map": "/memory2/static/js/main.5dc9a44b.chunk.js.map",
     "runtime-main.js": "/memory2/static/js/runtime-main.83442045.js",
     "runtime-main.js.map": "/memory2/static/js/runtime-main.83442045.js.map",
     "static/js/2.151f3102.chunk.js": "/memory2/static/js/2.151f3102.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.c4fd13dc.chunk.js": "/memory2/static/js/3.c4fd13dc.chunk.js",
     "static/js/3.c4fd13dc.chunk.js.map": "/memory2/static/js/3.c4fd13dc.chunk.js.map",
     "index.html": "/memory2/index.html",
-    "static/css/main.3df011a9.chunk.css.map": "/memory2/static/css/main.3df011a9.chunk.css.map",
+    "static/css/main.0f91eefd.chunk.css.map": "/memory2/static/css/main.0f91eefd.chunk.css.map",
     "static/js/2.151f3102.chunk.js.LICENSE.txt": "/memory2/static/js/2.151f3102.chunk.js.LICENSE.txt",
     "static/media/CardCell.css": "/memory2/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.83442045.js",
     "static/js/2.151f3102.chunk.js",
-    "static/css/main.3df011a9.chunk.css",
-    "static/js/main.e7a9ea5b.chunk.js"
+    "static/css/main.0f91eefd.chunk.css",
+    "static/js/main.5dc9a44b.chunk.js"
   ]
 }
