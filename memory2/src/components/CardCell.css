@@ -1,15 +1,18 @@
 .card {
-  background: lightblue;
-  margin: 0.5em;
-  width: 10%;
-  height: 10%;
-  border: 0.1em solid black;
-  border-radius: 0.5em;
-  cursor: pointer;
-  font-size: 150%;
+float: left;
+  width: 3em;
+  height: 7em;
+  background-color: lightblue;
+  font-size: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 0.1em solid #e1e1e1;
+  box-sizing: border-box;
+  padding: 0.2em;
+  box-shadow: 0.05em 0.05em gray;
+  border-radius: 0.3em;
+  margin: 0.1em;
 }
 
 .covered {
