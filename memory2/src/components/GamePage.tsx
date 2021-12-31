@@ -20,7 +20,7 @@ const GamePage: React.FC = () => {
     const playerFactory = singlPlayerFactory.getPlayerFactoryInstance(
         noOfPlayers.noOfPlayers
     );
-    const [players, setPlayers] = useState(playerFactory.getAllPlayers());
+    const players = playerFactory.getAllPlayers();
     const [gameOver, setGameOver] = useState(false);
 
     const getWinnerName = (): string => {
@@ -34,32 +34,28 @@ const GamePage: React.FC = () => {
     }
 
     const addPtsToPlayerOnMove = (): void => {
-        setPlayers(
-            players.map((p) => {
-                if (p.isOnMove()) {
-                    p.addPoints();
-                }
-                return p;
-            })
-        );
+        for (let i = 0; i < players.length; i++) {
+            if (players[i].isOnMove()) {
+                players[i].addPoints();
+            }
+        }
     };
 
     const togglePlayerOnMove = (playerId: number): void => {
-        setPlayers(
-            players.map((p) => {
-                if (p.getId() === playerId) {
-                    p.toggleOnMove();
-                }
-                return p;
-            })
-        );
+        for (let i = 0; i < players.length; i++) {
+            if (players[i].getId() === playerId) {
+                players[i].toggleOnMove();
+            }
+        }
     };
 
     const moveToNextPlayer = (): void => {
-        let playerOnMove: Player = players.filter((p) => {
-            return p.isOnMove;
-        })[0];
-        let idOnMove: number = playerOnMove.getId();
+        let idOnMove: number = 0;
+        for (let i = 0; i < players.length; i++) {
+            if (players[i].isOnMove()) {
+                idOnMove = players[i].getId();
+            }
+        }
         togglePlayerOnMove(idOnMove);
         if (idOnMove + 1 === players.length) {
             togglePlayerOnMove(0);
