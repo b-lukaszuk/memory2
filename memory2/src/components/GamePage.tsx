@@ -22,7 +22,6 @@ const GamePage: React.FC = () => {
     );
     const [players, setPlayers] = useState(playerFactory.getAllPlayers());
     const [gameOver, setGameOver] = useState(false);
-    const [winner, setWinner] = useState("");
 
     const getWinnerName = (): string => {
         let theWinner: Player = players[0];
