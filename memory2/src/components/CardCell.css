@@ -20,6 +20,7 @@ float: left;
   background-repeat: no-repeat;
   background-position: center;
   background-color: white;
+  cursor: pointer;
 }
 
 .matched {
