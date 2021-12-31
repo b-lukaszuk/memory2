@@ -7,6 +7,7 @@ import Player from "../customClasses/player/player";
 import Players from "./Players";
 import singlCardFactory from "../customClasses/card/cardFactory";
 import singlPlayerFactory from "../customClasses/player/playerFactory";
+import Button from "./Button";
 
 import "./GamePage.css";
 
@@ -20,6 +21,8 @@ const GamePage: React.FC = () => {
         noOfPlayers.noOfPlayers
     );
     const [players, setPlayers] = useState(playerFactory.getAllPlayers());
+    const [gameOver, setGameOver] = useState(false);
+
 
     const addPtsToPlayerOnMove = () => {
         setPlayers(
@@ -94,6 +97,14 @@ const GamePage: React.FC = () => {
         });
     };
 
+    const isGameOver = (): boolean => {
+        let sum: number = 0;
+        for (let i = 0; i < players.length; i++) {
+            sum += players[i].getPoints();
+        }
+        return (sum === 1200 ? true : false);
+    }
+
     const handleCardClick = (cardId: number) => {
         if (canClickOnCard) {
             toggleCardCover(cardId);
@@ -123,7 +134,21 @@ const GamePage: React.FC = () => {
                 }
             }
         }
+        if (isGameOver()) {
+            setGameOver(true);
+        }
     };
+
+    const resetForNewGame = (): void => {
+        for (let i = 0; i < players.length; i++) {
+            players[i].resetPlayerData();
+        }
+        setGameOver(false);
+        setCards(cardFactory.getAllCards());
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].resetCardData();
+        }
+    }
 
     ///////////////////////////////////////////////////////////////////////////
     //                              render stuff                             //
@@ -132,6 +157,10 @@ const GamePage: React.FC = () => {
         <div>
             <h1>Memory game</h1>
             <Players players={players} />
+            <span>Game status: {gameOver ? 'Game Over' : 'In progress'}</span>
+            <br /> <br />
+            <Button className='normalBut'
+                onClick={resetForNewGame} btnText='new game' />
             <div className="container">
                 <div className="cards">
                     {cards.map((o) => (

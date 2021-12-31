@@ -49,6 +49,11 @@ class Card {
         return this._covered;
     }
 
+    public resetCardData(): void {
+        this._covered = true;
+        this._matched = false;
+    }
+
     // for setting class of the displayed card in html
     public getStatus(): string {
         if (this._matched) {

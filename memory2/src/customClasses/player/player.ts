@@ -22,8 +22,8 @@ class Player {
         return this._name;
     }
 
-    public getPoints(): string {
-        return this._points + " pts";
+    public getPoints(): number {
+        return this._points;
     }
 
     public addPoints(howMany: number = 100): void {
@@ -36,6 +36,11 @@ class Player {
 
     public toggleOnMove(): void {
         this._onMove = !this._onMove;
+    }
+
+    public resetPlayerData(): void {
+        this._points = 0;
+        this._onMove = (this._id === 0 ? true : false);
     }
 }
 

@@ -15,7 +15,7 @@ const Players: React.FC<Props> = (props) => {
         return (
             <tr key={p.getId()} className={p.isOnMove() ? 'onMove' : ''}>
                 <td>
-                    {p.getName()} : {p.getPoints()}
+                    {p.getName()} : {p.getPoints() + " pts"}
                 </td>
             </tr>
         )
