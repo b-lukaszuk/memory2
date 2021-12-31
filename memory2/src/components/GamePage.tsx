@@ -33,7 +33,7 @@ const GamePage: React.FC = () => {
         return theWinner.getName();
     }
 
-    const addPtsToPlayerOnMove = () => {
+    const addPtsToPlayerOnMove = (): void => {
         setPlayers(
             players.map((p) => {
                 if (p.isOnMove()) {
@@ -44,7 +44,7 @@ const GamePage: React.FC = () => {
         );
     };
 
-    const togglePlayerOnMove = (playerId: number) => {
+    const togglePlayerOnMove = (playerId: number): void => {
         setPlayers(
             players.map((p) => {
                 if (p.getId() === playerId) {
@@ -55,7 +55,7 @@ const GamePage: React.FC = () => {
         );
     };
 
-    const moveToNextPlayer = () => {
+    const moveToNextPlayer = (): void => {
         let playerOnMove: Player = players.filter((p) => {
             return p.isOnMove;
         })[0];
@@ -78,7 +78,7 @@ const GamePage: React.FC = () => {
     // can click on other card or need to wait for player to finish turn
     const [canClickOnCard, setCanClickOnCard] = useState(true);
 
-    const toggleCardCover = (cardId: number) => {
+    const toggleCardCover = (cardId: number): void => {
         setCards(
             cards.map((c) => {
                 if (c.getId() === cardId) {
@@ -89,7 +89,7 @@ const GamePage: React.FC = () => {
         );
     };
 
-    const toggleCardMatched = (id: number) => {
+    const toggleCardMatched = (id: number): void => {
         setCards(
             cards.map((c) => {
                 if (c.getId() === id) {
@@ -114,7 +114,7 @@ const GamePage: React.FC = () => {
         return (sum === 1200 ? true : false);
     }
 
-    const handleCardClick = (cardId: number) => {
+    const handleCardClick = (cardId: number): void => {
         if (canClickOnCard) {
             toggleCardCover(cardId);
             let uncovCards: Card[] = getUncoveredCards();

@@ -21,11 +21,11 @@ class Card {
         return this._symbol;
     }
 
-    public isSymbolEqual(other: Card) {
+    public isSymbolEqual(other: Card): boolean {
         return this._symbol === other._symbol;
     }
 
-    public isEqual(other: Card) {
+    public isEqual(other: Card): boolean {
         return this._id === other._id;
     }
 
@@ -45,7 +45,7 @@ class Card {
         return this._matched;
     }
 
-    public isCovered() {
+    public isCovered(): boolean {
         return this._covered;
     }
 
