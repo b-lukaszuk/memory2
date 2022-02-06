@@ -24,13 +24,15 @@ const GamePage: React.FC = () => {
     const [gameOver, setGameOver] = useState(false);
 
     const getWinnerName = (): string => {
-        let theWinner: Player = players[0];
-        for (let i = 1; i < players.length; i++) {
-            if (players[i].getPoints() > theWinner.getPoints()) {
-                theWinner = players[i];
-            }
-        }
-        return theWinner.getName();
+        let theMax: number = Math.max(...players.map((p) => {
+            return p.getPoints();
+        }))
+        let winners: string[] = players.filter((p) => {
+            return p.getPoints() === theMax;
+        }).map((p) => {
+            return p.getName();
+        });
+        return winners.join(", ");
     }
 
     const addPtsToPlayerOnMove = (): void => {
@@ -163,7 +165,7 @@ const GamePage: React.FC = () => {
             <h1>Memory game</h1>
             <Players players={players} />
             <span>Game status: {gameOver ? 'Game Over. ' : 'In progress'}</span>
-            {gameOver && <span>{getWinnerName()} won!</span>}
+            {gameOver && <span>Winner(s): {getWinnerName()}!</span>}
             <br /> <br />
             <Button className='normalBut'
                 onClick={resetForNewGame} btnText='new game' />
