@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/memory2/static/css/main.ddb5ff2b.chunk.css",
+    "main.css": "/memory2/static/css/main.636db874.chunk.css",
     "main.js": "/memory2/static/js/main.c9580509.chunk.js",
     "main.js.map": "/memory2/static/js/main.c9580509.chunk.js.map",
     "runtime-main.js": "/memory2/static/js/runtime-main.9033a422.js",
@@ -10,14 +10,14 @@
     "static/js/3.61bfac49.chunk.js": "/memory2/static/js/3.61bfac49.chunk.js",
     "static/js/3.61bfac49.chunk.js.map": "/memory2/static/js/3.61bfac49.chunk.js.map",
     "index.html": "/memory2/index.html",
-    "static/css/main.ddb5ff2b.chunk.css.map": "/memory2/static/css/main.ddb5ff2b.chunk.css.map",
+    "static/css/main.636db874.chunk.css.map": "/memory2/static/css/main.636db874.chunk.css.map",
     "static/js/2.54fbc0dc.chunk.js.LICENSE.txt": "/memory2/static/js/2.54fbc0dc.chunk.js.LICENSE.txt",
     "static/media/CardCell.css": "/memory2/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.9033a422.js",
     "static/js/2.54fbc0dc.chunk.js",
-    "static/css/main.ddb5ff2b.chunk.css",
+    "static/css/main.636db874.chunk.css",
     "static/js/main.c9580509.chunk.js"
   ]
 }
