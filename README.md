@@ -21,3 +21,7 @@ Utworzono za: https://create-react-app.dev/docs/adding-typescript/ komeda:
 ```bash
 npx create-react-app my-app --template typescript
 ```
+
+# Warning
+
+**The content of this folder may be incorrect, erroneous and/or harmful. Use it at Your own risk.**
